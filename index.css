@@ -1,0 +1,85 @@
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 80%;
+    margin-top:10px;
+    margin-bottom:1.5px ;
+    margin-left: 0px;
+    margin-right:1.5px ;
+}
+
+
+
+/* Background video styles */
+.background-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Hero section specific styles */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem; /* Increased font size */
+    margin-bottom: 1rem;
+    font-weight: 700; /* Bold font weight */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.btn {
+    display: inline-flex; /* Use flexbox to align items */
+    align-items: center; /* Center align items vertically */
+    padding: 10px 20px;
+    background-color: rgba(22, 17, 17, 0.281); /* Blurry cement color */
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(0.5px); /* Reduced blur effect */
+}
+
+.btn i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.btn:hover {
+    background-color: rgb(159, 206, 212); /* Solid cement color on hover */
+}

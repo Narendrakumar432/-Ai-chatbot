@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"type="x-icon" href="logo2.jpeg">
+    <title>Ai Chatbot</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="signup-container">
+            <h2>Create Your Account</h2>
+            <div class="social-signup">
+                <p>Sign up with:</p>
+                <button class="btn-google" onclick="continueWithGoogle()">
+                    <i class="fab fa-google"></i> Continue with Google
+                </button>
+                <button class="btn-facebook" onclick="continueWithFacebook()">
+                    <i class="fab fa-facebook-f"></i> Continue with Facebook
+                </button>
+                <button class="btn-Yahoo" onclick="continueWithYahoo()">
+                    <i class="fab fa-yahoo"></i> Continue with Yahoo
+                </button>
+            </div>
+            <p>or</p>
+            <form id="signupForm" class="signup-form" onsubmit="return validateSignupForm()">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div id="signupEmailError" class="error-msg"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn">Sign Up</button>
+                </div>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function validateSignupForm() {
+            var emailInput = document.getElementById('email');
+            var emailError = document.getElementById('signupEmailError');
+            var isValid = emailInput.checkValidity();
+
+            if (!isValid) {
+                emailError.innerHTML = "Please enter a valid email address.";
+                emailError.style.display = 'block';
+                return false;
+            } else {
+                emailError.style.display = 'none';
+                return true;
+            }
+        }
+
+        function continueWithGoogle() {
+            // Implement Google OAuth or redirect to Google login page
+            console.log('Continuing with Google...');
+        }
+
+        function continueWithFacebook() {
+            // Implement Facebook OAuth or redirect to Facebook login page
+            console.log('Continuing with Facebook...');
+        }
+
+        function continueWithInstagram() {
+            // Implement Instagram OAuth or redirect to Instagram login page
+            console.log('Continuing with Instagram...');
+        }
+    </script>
+</body>
+
+</html>
