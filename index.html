@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"type="x-icon" href="logo2.jpeg">
+    <link rel="shortcut icon" type="image/x-icon" href="logo2.jpeg">
     <title>Ai Chatbot</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
     <div class="background-video-container">
         <video autoplay muted loop id="backgroundVideo">
             <source src="video1.mp4" type="video/mp4">
@@ -20,14 +19,106 @@
     </div>
 
     <div class="container">
-        <section class="hero">
-            <div>
-                <h1>Welcome to Ai Chatbot</h1>
-                <p>Explore our features and join today!</p>
-                <a href="signup.html" class="btn"><i class="fas fa-brain"></i> Try Now</a>
-            </div>
-        </section>
+        <main>
+            <section class="hero">
+                <div>
+                    <h1>Welcome to Ai Chatbot</h1>
+                    <p>Explore our features and join today!</p>
+                    <a href="signup.html" class="btn"><i class="fas fa-brain"></i> Try Now</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <section class="achievements">
+                <h2><i>Our Achievements</i></h2>
+                <div class="number-counts">
+                    <div class="count-item">
+                        <div class="count-bg">
+                            <h3 class="count" data-count="1000">0</h3>
+                        </div>
+                        <p class="count-label"><i>Active Users</i></p>
+                    </div>
+                    <div class="count-item">
+                        <div class="count-bg">
+                            <h3 class="count" data-count="50000">0</h3>
+                        </div>
+                        <p class="count-label"><i>Messages Sent</i></p>
+                    </div>
+                    <div class="count-item">
+                        <div class="count-bg">
+                            <h3 class="count" data-count="95">0</h3>
+                        </div>
+                        <p class="count-label"><i>User Satisfaction (%)</i></p>
+                    </div>
+                    <div class="count-item">
+                        <div class="count-bg">
+                            <h3 class="count" data-count="12">0</h3>
+                        </div>
+                        <p class="count-label"><i>Conversion Rate (%)</i></p>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>About Us</h2>
+                    <div class="paragraphs">
+                        <p class="paragraph1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida nunc non ipsum aliquam, ut maximus nunc aliquet.</p>
+                        <p class="paragraph2">Praesent vel risus sit amet felis aliquet fermentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+                        <p class="paragraph3">Fusce in leo odio. Vestibulum sodales turpis a nulla condimentum ullamcorper. Curabitur tincidunt nibh ac urna malesuada scelerisque.</p>
+                    </div>
+                </div>
+                <div class="footer-section features">
+                    <h2>Features</h2>
+                    <div class="paragraphs">
+                        <p class="paragraph1">Suspendisse potenti. Sed nec ante quis nulla sodales rutrum. Aenean condimentum, mi ac molestie lobortis, neque arcu interdum metus.</p>
+                        <p class="paragraph2">Quisque ac libero id metus molestie commodo. Aliquam nec interdum augue. Sed laoreet nisi eget justo bibendum, ut feugiat enim malesuada.</p>
+                        <p class="paragraph3">Vivamus placerat est eu risus suscipit, at ultrices ligula tristique. Nullam vitae ante nec velit rhoncus lacinia. Sed sollicitudin nulla et.</p>
+                    </div>
+                </div>
+
+                <!-- Inside the footer-content, replacing the "Contact Us" section -->
+<div class="footer-section recommendations">
+    <h2>AI Insights</h2>
+    <div class="paragraphs">
+        <p class="paragraph1">Explore our AI-powered customer support feature that provides 24/7 assistance.</p>
+        <p class="paragraph2">Discover personalized responses tailored to your business needs with our customizable AI chatbot.</p>
+        <p class="paragraph3">Try out our natural language processing capabilities for seamless user interactions.</p>
+    </div>
+</div>
+
+        </footer>
     </div>
 
+    <script>
+        // Script for animating number counts
+        const counts = document.querySelectorAll('.count');
+        const speed = 200; // The lower the slower
+
+        counts.forEach(count => {
+            const updateCount = () => {
+                const target = +count.getAttribute('data-count');
+                const countValue = +count.innerText;
+                const increment = target / speed;
+
+                if (countValue < target) {
+                    count.innerText = Math.ceil(countValue + increment);
+                    setTimeout(updateCount, 1);
+                } else {
+                    count.innerText = formatNumber(target);
+                }
+            };
+
+            updateCount();
+        });
+
+        function formatNumber(number) {
+            if (number >= 1000) {
+                return Math.floor(number / 1000) + 'k';
+            }
+            return number;
+        }
+    </script>
 </body>
 </html>
