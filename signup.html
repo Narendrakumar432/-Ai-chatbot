@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMcl7K0+MMwA3d+ljCjs23tZlq7a+TQYIIj7xtD" crossorigin="anonymous">
     <link rel="stylesheet" href="signup.css">
 </head>
-
 <body>
     <video autoplay muted loop id="bgVideo">
         <source src="video1.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-
     <header>
         <nav>
             <ul>
@@ -24,13 +21,11 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <div class="signup-container">
             <div class="signup-header">
                 <h2>Create Your Account</h2>
             </div>
-
             <form id="signupForm" class="signup-form" onsubmit="return validateSignupForm()">
                 <div class="form-group">
                     <div class="inputbox">
@@ -40,7 +35,6 @@
                     </div>
                     <span id="signupEmailError" style="color: red; display: none;"></span>
                 </div>
-
                 <div class="form-group">
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
@@ -48,30 +42,25 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <button type="submit" class="btn">Sign Up</button>
                 </div>
             </form>
-
             <div class="social-signup">
                 <p>------------------------ or ------------------------</p>
-                <button class="google"><ion-icon name="logo-google"></ion-icon> Google</button>
-                <button class="facebook"><ion-icon name="logo-foursquare"></ion-icon> Facebook</button>
+                <button class="google"><ion-icon name="logo-google"></ion-icon>oogle</button>
+                <button class="facebook"><ion-icon name="logo-foursquare"></ion-icon>acebook</button>
                 <button class="apple"><ion-icon name="logo-apple"></ion-icon> Apple</button>
             </div>
-
             <h5 class="login-link">Already have an account? <a href="login.html">Login</a></h5>
         </div>
     </main>
-
     <script src="chat.js"></script>
     <script>
         function validateSignupForm() {
             var emailInput = document.getElementById('email');
             var emailError = document.getElementById('signupEmailError');
             var isValid = emailInput.checkValidity();
-
             if (!isValid) {
                 emailError.innerHTML = "Please enter a valid email address.";
                 emailError.style.display = 'block';
@@ -83,18 +72,14 @@
                 return false; // Prevent form submission
             }
         }
-
         function handleSignup() {
             var email = document.getElementById('email').value;
             var password = document.getElementById('password').value;
-
             // Simulate an API call to signup the user
             // Here you can add AJAX or fetch call to your server to handle signup
-
             // For demonstration, redirect to chat.html
             window.location.href = 'chat.html';
         }
     </script>
 </body>
-
 </html>
