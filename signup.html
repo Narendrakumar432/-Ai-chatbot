@@ -4,67 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon"type="x-icon" href="logo2.jpeg">
-    <title>Ai Chatbot</title>
+    <title>Signup - Your Web App</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMcl7K0+MMwA3d+ljCjs23tZlq7a+TQYIIj7xtD" crossorigin="anonymous">
     <link rel="stylesheet" href="signup.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
+    <video autoplay muted loop id="bgVideo">
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="signup.html">Signup</a></li>
-                <!-- Add more navigation links as needed -->
+                <li><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="signup-container">
-            <h2>Create Your Account</h2>
-            <div class="social-signup">
-                <p>Sign up with:</p>
-                <button class="btn-google" onclick="continueWithGoogle()">
-                    <i class="fab fa-google"></i> Continue with Google
-                </button>
-                <button class="btn-facebook" onclick="continueWithFacebook()">
-                    <i class="fab fa-facebook-f"></i> Continue with Facebook
-                </button>
-                <button class="btn-Yahoo" onclick="continueWithYahoo()">
-                    <i class="fab fa-yahoo"></i> Continue with Yahoo
-                </button>
+            <div class="signup-header">
+                <h2>Create Your Account</h2>
             </div>
-            <p>or</p>
+
             <form id="signupForm" class="signup-form" onsubmit="return validateSignupForm()">
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <div id="signupEmailError" class="error-msg"></div>
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <span id="signupEmailError" style="color: red; display: none;"></span>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="password" name="password" required>
+                        <label for="password">Password</label>
+                    </div>
                 </div>
 
                 <div class="form-group">
                     <button type="submit" class="btn">Sign Up</button>
                 </div>
             </form>
-            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+
+            <div class="social-signup">
+                <p>------------------------ or ------------------------</p>
+                <button class="google"><ion-icon name="logo-google"></ion-icon> Google</button>
+                <button class="facebook"><ion-icon name="logo-foursquare"></ion-icon> Facebook</button>
+                <button class="apple"><ion-icon name="logo-apple"></ion-icon> Apple</button>
+            </div>
+
+            <h5 class="login-link">Already have an account? <a href="login.html">Login</a></h5>
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="chat.js"></script>
     <script>
         function validateSignupForm() {
             var emailInput = document.getElementById('email');
@@ -77,23 +78,21 @@
                 return false;
             } else {
                 emailError.style.display = 'none';
-                return true;
+                // If validation passes, call handleSignup function
+                handleSignup();
+                return false; // Prevent form submission
             }
         }
 
-        function continueWithGoogle() {
-            // Implement Google OAuth or redirect to Google login page
-            console.log('Continuing with Google...');
-        }
+        function handleSignup() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
 
-        function continueWithFacebook() {
-            // Implement Facebook OAuth or redirect to Facebook login page
-            console.log('Continuing with Facebook...');
-        }
+            // Simulate an API call to signup the user
+            // Here you can add AJAX or fetch call to your server to handle signup
 
-        function continueWithInstagram() {
-            // Implement Instagram OAuth or redirect to Instagram login page
-            console.log('Continuing with Instagram...');
+            // For demonstration, redirect to chat.html
+            window.location.href = 'chat.html';
         }
     </script>
 </body>
